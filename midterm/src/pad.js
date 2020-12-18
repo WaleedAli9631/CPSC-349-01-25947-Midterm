@@ -5,8 +5,7 @@ class pad extends Component {
     render() {
         return (
             <div className="button">
-                <button name="" onClick={e => this.props.onClick(e.target.name)}> </button>
-                <button name="" onClick={e => this.props.onClick(e.target.name)}> </button>
+               
                 <button name="C" onClick={e => this.props.onClick(e.target.name)}>C</button>
                 <br/>
 

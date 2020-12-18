@@ -21,9 +21,6 @@ class App extends Component {
         else if(button === "C"){
             this.reset()
         }
-        else if(button === "CE"){
-            this.backspace()
-        }
 
         else {
             this.setState({
@@ -45,7 +42,6 @@ class App extends Component {
 
         try {
             this.setState({
-                // eslint-disable-next-line
                 result: (eval(checkResult) || "" ) + ""
             })
         } catch (e) {
@@ -72,7 +68,6 @@ class App extends Component {
         return (
             <div>
                 <div className="calculator-body">
-                    <h1>Simple Calculator</h1>
                     <ResultComponent result={this.state.result}/>
                     <KeyPadComponent onClick={this.onClick}/>
                 </div>
