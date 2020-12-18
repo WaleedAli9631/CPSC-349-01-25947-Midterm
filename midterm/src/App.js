@@ -3,48 +3,62 @@ import './App.css';
 import ResultComponent from './result';
 import KeyPadComponent from "./pad";
 
-class App extends Component {
-    constructor(){
+class App extends Component 
+{
+    constructor()
+    {
         super();
 
-        this.state = {
+        this.state = 
+        {
             result: ""
         }
     }
 
-    onClick = button => {
+    onClick = button => 
+    {
 
-        if(button === "="){
+        if(button === "=")
+        {
             this.calculate()
         }
 
-        else if(button === "C"){
+        else if(button === "C")
+        {
             this.reset()
         }
 
-        else {
-            this.setState({
+        else 
+        {
+            this.setState
+            (
+              {
                 result: this.state.result + button
             })
         }
     };
 
 
-    calculate = () => {
+    calculate = () => 
+    {
         var checkResult = ''
-        if(this.state.result.includes('--')){
+        if(this.state.result.includes('--'))
+        {
             checkResult = this.state.result.replace('--','+')
         }
 
-        else {
+        else
+         {
             checkResult = this.state.result
         }
 
-        try {
+        try
+         {
             this.setState({
                 result: (eval(checkResult) || "" ) + ""
             })
-        } catch (e) {
+        } catch (e)
+         {
             this.setState({
                 result: "error"
             })
@@ -52,13 +66,15 @@ class App extends Component {
         }
     };
 
-    reset = () => {
+    reset = () =>
+     {
         this.setState({
             result: ""
         })
     };
 
-    backspace = () => {
+    backspace = () => 
+    {
         this.setState({
             result: this.state.result.slice(0, -1)
         })
